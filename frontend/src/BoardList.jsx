@@ -1,10 +1,10 @@
-import boardCards from "./BoardCard"
+import BoardCards from "./BoardCard"
 
 
-export default function BoardList({ BoardCards }){
+export default function BoardList({ boardCards }){
     return(
+        //hello
 
-
-        <boardCard  />
+        <BoardCards boardCards={boardCards}  />
     )
 }
