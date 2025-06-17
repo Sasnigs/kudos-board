@@ -17,12 +17,13 @@ model Boards {
   title   String
   category String
   author  String?
-  cards   Card[]
+  cards   Cards[]
   createdAt DateTime @default(now())
 }
 
-model Card {
+model Cards {
   id      String @id @default(cuid())
+  title  String
   message String
   gif     String
   upvotes Int @default(0)
