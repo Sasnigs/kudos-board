@@ -1,4 +1,4 @@
-export default function boardCards(){
+export default function BoardCards(){
     return(
         <>
         
