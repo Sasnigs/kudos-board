@@ -17,6 +17,7 @@ model Boards {
   title   String
   category String
   author  String?
+  image   String?
   cards   Cards[]
   createdAt DateTime @default(now())
 }

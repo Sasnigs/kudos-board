@@ -43,6 +43,7 @@ app.get("/get-boards/:id", async (req, res) => {
 // CREATE A NEW BOARD
 app.post("/create-board", async (req, res) => {
   const { title, category, author } = req.body;
+  const defaultImgUrl = 'https://picsum.photos/200/300'
   if (!title || !category) {
     return res.status(400).json({ error: "title and category required" });
   }
@@ -52,6 +53,7 @@ app.post("/create-board", async (req, res) => {
         title,
         category,
         author,
+        image: defaultImgUrl,
       },
     });
     res.status(201).json(newBoard);
