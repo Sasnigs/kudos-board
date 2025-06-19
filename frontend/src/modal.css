@@ -33,9 +33,7 @@
   background-color: black;
   color: grey;
 }
-.modal-content p{
-  margin-bottom: 10px;
-}
+
 .modal-overlay.show {
   opacity: 1;
   visibility: visible;
