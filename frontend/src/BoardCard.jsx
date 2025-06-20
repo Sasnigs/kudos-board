@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom'
-
+import "./BoardCard.css"
 
 export default function BoardCard({board, changeRefresh, BASE_URL}){
 
@@ -18,7 +18,7 @@ export default function BoardCard({board, changeRefresh, BASE_URL}){
   }
 }
     return(
-       <div>
+       <div className='board-card'>
             <img src={board.image} alt={board.title} />
             <h2>{board.title}</h2>
             <p>{board.category}</p>

@@ -9,6 +9,7 @@ const Categories = {
   INSPIRATION: "inspiration",
   THANK_YOU: "thank you",
   CELEBRATION: "celebration",
+  RECENT: "recent"
 };
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
   }, [refresh]);
 
   return (
-    <div>
+    <div className="app-div">
       <h1>Kudos Boards</h1>
       <Routes>
         <Route

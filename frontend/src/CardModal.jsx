@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './CardModal.css'
 
 export default function CardModal({ changeModal, boardId, setBoard }) {
   const [title, setTitle] = useState("");
@@ -23,13 +24,8 @@ export default function CardModal({ changeModal, boardId, setBoard }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = {
-      title,
-      message,
-      gif, 
-      boardId,
-    };
-    console.log(gif)
+    const formData = { title, message, gif, boardId };
+
     fetch(`http://localhost:5000/cards`, {
       method: "POST",
       headers: {
@@ -46,7 +42,7 @@ export default function CardModal({ changeModal, boardId, setBoard }) {
   return (
     <div className={`modal-overlay show`}>
       <div className="modal-content">
-        <h2>Create a New Board</h2>
+        <h2>Create New Card</h2>
         <form onSubmit={(e) => handleSubmit(e)}>
           <input
             type="text"
@@ -71,28 +67,16 @@ export default function CardModal({ changeModal, boardId, setBoard }) {
           <button type="button" onClick={searchGIFS}>
             search
           </button>
-          <div>
+          <div className="gif-contain">
             {gifResult.slice(0, 6).map((g) => (
-              <img
+              <img width="150px"
                 key={g.id}
                 src={g.images.fixed_height.url}
                 onClick={() => setGif(g.images.fixed_height.url)}
-                // style={{
-                //   boarder:
-                //     gif === g.images.fixed_height.url
-                //       ? "2px solid green"
-                //       : "none",
-                // }}
               />
             ))}
           </div>
           <input type="text" value={gif} readOnly placeholder="Enter GIF URL" />
-          <button
-            type="button"
-            onClick={() => navigator.clipboard.writeText(gif)}
-          >
-            Copy gif URL
-          </button>
 
           <button type="submit">Create card</button>
         </form>

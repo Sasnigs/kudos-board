@@ -1,4 +1,4 @@
-// import "./search.css";
+import "./search.css";
 import { useState } from "react";
 
 export default function Search({ setSearchState, SortMovies, setBoards }) {
@@ -33,7 +33,6 @@ export default function Search({ setSearchState, SortMovies, setBoards }) {
   return (
     <>
       <div className="search-comp">
-        <div className="search-input">
           <form className="search-form" onSubmit={(e) => search(e)}>
             <input
               className="search-field"
@@ -50,7 +49,6 @@ export default function Search({ setSearchState, SortMovies, setBoards }) {
           <button className="playing-btn" onClick={clearInput}>
             Clear
           </button>
-        </div>
       </div>
     </>
   );

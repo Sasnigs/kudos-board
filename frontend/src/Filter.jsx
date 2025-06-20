@@ -1,11 +1,13 @@
+import "./Filter.css"
+
 export default function Filter({ setCategory, Categories }) {
   function changeCategory(category) {
     setCategory(category);
   }
   return (
-    <div>
+    <div className="category">
       <button onClick={() => changeCategory(Categories.DEFAULT)}>All</button>
-      <button onClick={() => changeCategory(Categories.DEFAULT)}>Recent</button>
+      <button onClick={() => changeCategory(Categories.RECENT)}>Recent</button>
       <button onClick={() => changeCategory(Categories.CELEBRATION)}>
         Celebration
       </button>

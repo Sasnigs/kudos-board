@@ -1,0 +1,9 @@
+.boards{
+    display: flex;
+    justify-self: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.board-list-comp{
+    margin-top: 30px;
+}

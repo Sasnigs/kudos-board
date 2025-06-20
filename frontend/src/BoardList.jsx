@@ -1,32 +1,32 @@
 import BoardCard from "./BoardCard";
-
-export default function BoardList({ boards, changeRefresh, category, Categories, BASE_URL }) {
+import "./BoardList.css"
+export default function BoardList({
+  boards,
+  changeRefresh,
+  category,
+  Categories,
+  BASE_URL,
+}) {
+  let filteredBoards = boards
+  if (category === "recent"){
+    filteredBoards = [...boards].sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt))
+  }else if (category !== Categories.DEFAULT){
+    filteredBoards = boards.filter((board) => board.category === category)
+  }
+  console.log(filteredBoards)
   return (
-    <div>
+    <div className="board-list-comp">
       {boards.length === 0 && <p>No boards yet</p>}
-      {boards.map((board) => {
-        if (category === Categories.DEFAULT) {
-          return (
-            <BoardCard
-              key={board.id}
-              board={board}
-              changeRefresh={changeRefresh} 
-              BASE_URL={BASE_URL}
-            />
-          );
-        } else {
-          if (board.category === category) {
-            return (
+      <div className="boards">
+        {filteredBoards.map((board) => 
               <BoardCard
                 key={board.id}
                 board={board}
                 changeRefresh={changeRefresh}
                 BASE_URL={BASE_URL}
               />
-            );
-          }
-        }
-      })}
+        )}
+      </div>
     </div>
   );
 }

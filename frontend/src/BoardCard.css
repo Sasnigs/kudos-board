@@ -1,0 +1,15 @@
+.board-card {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+.board-card button {
+  background-color: rgb(52, 64, 119);
+  color: #fff;
+  padding: 10px 20px;
+  border: 2px solid white;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  border-radius: 20px;
+}

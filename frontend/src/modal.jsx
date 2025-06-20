@@ -30,7 +30,7 @@ export default function Modal({ changeModal, setBoards, BASE_URL }) {
       <div className={`modal-overlay show`}>
         <div className="modal-content">
           <h2>Create a New Board</h2>
-          <form onSubmit={(e) => handleSubmit(e)}>
+          <form className="form-modal" onSubmit={(e) => handleSubmit(e)}>
             <label>
               Title:
               <input
@@ -41,8 +41,8 @@ export default function Modal({ changeModal, setBoards, BASE_URL }) {
               />
             </label>
 
-            <label>Category: </label>
-            <select
+            <label>Category:
+              <select
               value={category}
               onChange={(event) => setCategory(event.target.value)}
               required
@@ -51,7 +51,8 @@ export default function Modal({ changeModal, setBoards, BASE_URL }) {
               <option>celebration</option>
               <option>thank you</option>
               <option>inspiration</option>
-            </select>
+            </select> </label>
+            
 
             <label>
               Author:
