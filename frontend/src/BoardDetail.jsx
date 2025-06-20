@@ -58,7 +58,7 @@ export default function BoardDetail() {
   };
   if (!board) return <p>Loading</p>;
   return (
-    <div>
+    <div className="cards-cont">
       <h2>{board.title}</h2>
       <NewCard boardId={id} setBoard={setBoard} />
       <div className="cards-container"> 
