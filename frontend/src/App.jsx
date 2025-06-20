@@ -6,6 +6,7 @@ import Homepage from "./Homepage";
 import Footer from "./footer";
 import { BASE_URL } from "./data/apiUrl";
 import { Link } from "react-router-dom";
+import Header from "./Header";
 
 const Categories = {
   DEFAULT: "all",
@@ -44,13 +45,10 @@ function App() {
   return (
     <>
     <div className="app-div">
-      <button onClick={() => (setTheme(theme === "light" ? "dark" : "light"))}>
+      <button className="toggle-btn" onClick={() => (setTheme(theme === "light" ? "dark" : "light"))}>
         Toggle theme
       </button>
-      <Link to={"/"} style={{ textDecoration: 'none', color: 'inherit' }}>
-          <h1>Kudos Boards</h1>
-      </Link>
-    
+      <Header />
       <Routes>
         <Route
           path="/"
