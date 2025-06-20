@@ -10,6 +10,8 @@ export default function Homepage({
   setSearchState,
   setCategory,
   category,
+  Categories,
+  BASE_URL
 }) {
   return (
     <>
@@ -17,13 +19,16 @@ export default function Homepage({
         setBoards={setBoards}
         changeRefresh={changeRefresh}
         setSearchState={setSearchState}
+        BASE_URL={BASE_URL}
       />
-      <Filter setCategory={setCategory} />
-      <NewBoard setBoards={setBoards} />
+      <Filter setCategory={setCategory} Categories={Categories} />
+      <NewBoard setBoards={setBoards} BASE_URL={BASE_URL} />
       <BoardList
         boards={boards}
         changeRefresh={changeRefresh}
         category={category}
+        Categories={Categories}
+        BASE_URL={BASE_URL}
       />
     </>
   );

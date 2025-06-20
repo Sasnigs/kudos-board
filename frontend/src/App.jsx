@@ -16,13 +16,14 @@ function App() {
   const [boards, setBoards] = useState([]);
   const [refresh, setRefresh] = useState(false);
   const [searchState, setSearchState] = useState(null);
+  const BASE_URL = "http://localhost:5000/";
 
   const changeRefresh = () => {
     setRefresh((prev) => !prev);
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/get-boards")
+    fetch(`${BASE_URL}get-boards`)
       .then((res) => res.json())
       .then((data) => setBoards(data))
       .catch((err) => console.log("Error fetching Boards:", err));
@@ -42,10 +43,12 @@ function App() {
               changeRefresh={changeRefresh}
               setBoards={setBoards}
               setSearchState={setSearchState}
+              Categories={Categories}
+              BASE_URL={BASE_URL}
             />
           }
         />
-        <Route path="/boards/:id" element={<BoardDetail />} />
+        <Route path="/boards/:id" element={<BoardDetail BASE_URL={BASE_URL} />} />
       </Routes>
     </div>
   );
