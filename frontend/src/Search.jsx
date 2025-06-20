@@ -1,4 +1,4 @@
-import "./search.css";
+import "./Search.css";
 import { useState } from "react";
 import { BASE_URL } from "./data/apiUrl";
 
