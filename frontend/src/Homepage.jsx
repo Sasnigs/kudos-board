@@ -1,7 +1,7 @@
 import BoardList from "./BoardList";
 import Search from "./Search";
 import Filter from "./Filter";
-import NewBoard from "./newBoard";
+import NewBoard from "./NewBoard";
 
 export default function Homepage({
   boards,
