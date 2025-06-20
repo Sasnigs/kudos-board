@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import BoardDetail from "./BoardDetail";
 import Homepage from "./Homepage";
 import Footer from "./footer";
+import { BASE_URL } from "./data/apiUrl";
 
 const Categories = {
   DEFAULT: "all",
@@ -18,8 +19,8 @@ function App() {
   const [boards, setBoards] = useState([]);
   const [refresh, setRefresh] = useState(false);
   const [searchState, setSearchState] = useState(null);
-  const BASE_URL = "http://localhost:5000/";
   const [theme, setTheme] = useState("light")
+
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme)

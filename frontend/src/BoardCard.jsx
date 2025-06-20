@@ -1,7 +1,8 @@
 import {Link} from 'react-router-dom'
 import "./BoardCard.css"
+import { BASE_URL } from "./data/apiUrl";
 
-export default function BoardCard({board, changeRefresh, BASE_URL}){
+export default function BoardCard({board, changeRefresh}){
 
   const deleteBoard = async () => {
   try {

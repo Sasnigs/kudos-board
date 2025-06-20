@@ -1,5 +1,6 @@
 import "./modal.css";
 import { useEffect, useState } from "react";
+import { BASE_URL } from "./data/apiUrl";
 
 export default function Modal({ changeModal, setBoards, BASE_URL }) {
   const [title, setTitle] = useState("");
@@ -13,7 +14,7 @@ export default function Modal({ changeModal, setBoards, BASE_URL }) {
       author,
     };
     console.log(formData)
-    fetch(`http://localhost:5000/create-board`, {
+    fetch(`${BASE_URL}/create-board`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

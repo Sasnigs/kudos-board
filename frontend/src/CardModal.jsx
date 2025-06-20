@@ -1,5 +1,6 @@
 import { useState } from "react";
 import './CardModal.css'
+import { BASE_URL } from "./data/apiUrl";
 
 export default function CardModal({ changeModal, boardId, setBoard }) {
   const [title, setTitle] = useState("");
@@ -26,7 +27,7 @@ export default function CardModal({ changeModal, boardId, setBoard }) {
     e.preventDefault();
     const formData = { title, message, gif, boardId };
 
-    fetch(`http://localhost:5000/cards`, {
+    fetch(`${BASE_URL}/cards`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

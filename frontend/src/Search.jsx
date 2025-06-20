@@ -1,14 +1,15 @@
 import "./search.css";
 import { useState } from "react";
+import { BASE_URL } from "./data/apiUrl";
 
-export default function Search({ setSearchState, SortMovies, setBoards }) {
+export default function Search({ setSearchState}) {
   const [searchVal, setSearchVal] = useState("");
 
   const search = async (e) => {
     e.preventDefault();
     try {
       const res = await fetch(
-        `http://localhost:5000/get-boards?query=${encodeURIComponent(
+        `${BASE_URL}/get-boards?query=${encodeURIComponent(
           searchVal
         )}`,
         {

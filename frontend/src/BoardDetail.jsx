@@ -1,14 +1,15 @@
 import { data, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import NewCard from "./NewCard";
+import { BASE_URL } from "./data/apiUrl";
 
-export default function BoardDetail({ BASE_URL }) {
+export default function BoardDetail() {
   const { id } = useParams();
   const [board, setBoard] = useState(null);
 
   async function fetchBoard() {
     try {
-      const res = await fetch(`http://localhost:5000/get-boards/${id}`);
+      const res = await fetch(`${BASE_URL}/get-boards/${id}`);
       const data = await res.json();
       setBoard(data);
     } catch (err) {
@@ -21,7 +22,7 @@ export default function BoardDetail({ BASE_URL }) {
 
   const deleteCard = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/cards/${id}`, {
+      const res = await fetch(`${BASE_URL}/cards/${id}`, {
         method: "DELETE",
       });
       if (res.ok) {
@@ -35,7 +36,7 @@ export default function BoardDetail({ BASE_URL }) {
   };
   const upVote = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/cards/${id}/upvote`, {
+      const res = await fetch(`${BASE_URL}L/cards/${id}/upvote`, {
         method: "PATCH",
       });
       if (res.ok) {
