@@ -9,7 +9,7 @@ export default function Search({ setSearchState}) {
     e.preventDefault();
     try {
       const res = await fetch(
-        `${BASE_URL}/get-boards?query=${encodeURIComponent(
+        `${BASE_URL}get-boards?query=${encodeURIComponent(
           searchVal
         )}`,
         {

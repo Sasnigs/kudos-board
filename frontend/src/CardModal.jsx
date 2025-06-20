@@ -27,7 +27,7 @@ export default function CardModal({ changeModal, boardId, setBoard }) {
     e.preventDefault();
     const formData = { title, message, gif, boardId };
 
-    fetch(`${BASE_URL}/cards`, {
+    fetch(`${BASE_URL}cards`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

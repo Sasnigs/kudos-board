@@ -9,7 +9,7 @@ export default function BoardDetail() {
 
   async function fetchBoard() {
     try {
-      const res = await fetch(`${BASE_URL}/get-boards/${id}`);
+      const res = await fetch(`${BASE_URL}get-boards/${id}`);
       const data = await res.json();
       setBoard(data);
     } catch (err) {
@@ -22,7 +22,7 @@ export default function BoardDetail() {
 
   const deleteCard = async (id) => {
     try {
-      const res = await fetch(`${BASE_URL}/cards/${id}`, {
+      const res = await fetch(`${BASE_URL}cards/${id}`, {
         method: "DELETE",
       });
       if (res.ok) {
@@ -36,7 +36,7 @@ export default function BoardDetail() {
   };
   const upVote = async (id) => {
     try {
-      const res = await fetch(`${BASE_URL}L/cards/${id}/upvote`, {
+      const res = await fetch(`${BASE_URL}cards/${id}/upvote`, {
         method: "PATCH",
       });
       if (res.ok) {

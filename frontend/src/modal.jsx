@@ -14,7 +14,7 @@ export default function Modal({ changeModal, setBoards, BASE_URL }) {
       author,
     };
     console.log(formData)
-    fetch(`${BASE_URL}/create-board`, {
+    fetch(`${BASE_URL}create-board`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
