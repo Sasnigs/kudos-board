@@ -1,16 +1,17 @@
 import BoardCard from "./BoardCard";
 
-export default function BoardList({ boards, changeRefresh, category }) {
+export default function BoardList({ boards, changeRefresh, category, Categories, BASE_URL }) {
   return (
     <div>
       {boards.length === 0 && <p>No boards yet</p>}
       {boards.map((board) => {
-        if (category === "all") {
+        if (category === Categories.DEFAULT) {
           return (
             <BoardCard
               key={board.id}
               board={board}
-              changeRefresh={changeRefresh}
+              changeRefresh={changeRefresh} 
+              BASE_URL={BASE_URL}
             />
           );
         } else {
@@ -20,6 +21,7 @@ export default function BoardList({ boards, changeRefresh, category }) {
                 key={board.id}
                 board={board}
                 changeRefresh={changeRefresh}
+                BASE_URL={BASE_URL}
               />
             );
           }

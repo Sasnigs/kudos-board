@@ -1,11 +1,4 @@
-const Categories = {
-  DEFAULT: "all",
-  INSPIRATION: "inspiration",
-  THANK_YOU: "thank_you",
-  CELEBRATION: "celebration",
-};
-
-export default function Filter({ setCategory }) {
+export default function Filter({ setCategory, Categories }) {
   function changeCategory(category) {
     setCategory(category);
   }

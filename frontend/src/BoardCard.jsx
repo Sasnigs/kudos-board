@@ -1,11 +1,11 @@
 import {Link} from 'react-router-dom'
 
 
-export default function BoardCard({board, changeRefresh}){
+export default function BoardCard({board, changeRefresh, BASE_URL}){
 
   const deleteBoard = async () => {
   try {
-    const res = await fetch(`http://localhost:5000/delete-boards/${board.id}`, {
+    const res = await fetch(`${BASE_URL}delete-boards/${board.id}`, {
       method: 'DELETE',
     });
     if (res.ok) {
