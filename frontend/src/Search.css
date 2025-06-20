@@ -13,8 +13,8 @@
   
 }
 .playing-btn {
-  background-color: black;
-  color: #fff;
+  background-color: var(--bg-color);
+   color: var( --text-color);
   padding: 10px 20px;
   border: 2px solid white;
   margin-left: 10px;

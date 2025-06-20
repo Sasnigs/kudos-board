@@ -13,7 +13,6 @@ export default function BoardList({
   }else if (category !== Categories.DEFAULT){
     filteredBoards = boards.filter((board) => board.category === category)
   }
-  console.log(filteredBoards)
   return (
     <div className="board-list-comp">
       {boards.length === 0 && <p>No boards yet</p>}

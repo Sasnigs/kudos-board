@@ -3,6 +3,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import BoardDetail from "./BoardDetail";
 import Homepage from "./Homepage";
+import Footer from "./footer";
 
 const Categories = {
   DEFAULT: "all",
@@ -18,10 +19,16 @@ function App() {
   const [refresh, setRefresh] = useState(false);
   const [searchState, setSearchState] = useState(null);
   const BASE_URL = "http://localhost:5000/";
+  const [theme, setTheme] = useState("light")
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme)
+  }, [theme])
 
   const changeRefresh = () => {
     setRefresh((prev) => !prev);
   };
+
 
   useEffect(() => {
     fetch(`${BASE_URL}get-boards`)
@@ -30,8 +37,14 @@ function App() {
       .catch((err) => console.log("Error fetching Boards:", err));
   }, [refresh]);
 
+
+
   return (
+    <>
     <div className="app-div">
+      <button onClick={() => (setTheme(theme === "light" ? "dark" : "light"))}>
+        Toggle theme
+      </button>
       <h1>Kudos Boards</h1>
       <Routes>
         <Route
@@ -52,6 +65,8 @@ function App() {
         <Route path="/boards/:id" element={<BoardDetail BASE_URL={BASE_URL} />} />
       </Routes>
     </div>
+      <Footer />
+       </>
   );
 }
 
