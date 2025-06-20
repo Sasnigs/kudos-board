@@ -15,7 +15,7 @@ html, body {
 }
 .app-div{
   flex: 1;
-  margin-bottom: 30px;
+  padding-bottom: 130px;
 }
 .toggle-btn{
    background-color: var( --btn-bg);
@@ -27,4 +27,11 @@ html, body {
   font-size: 1rem;
   border-radius: 20px;
   cursor: pointer;
+  
+}
+.toggle-cont{
+display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-right: 5%;
 }

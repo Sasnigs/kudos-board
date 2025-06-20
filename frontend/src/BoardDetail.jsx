@@ -56,7 +56,7 @@ export default function BoardDetail() {
       console.error("Error:", error);
     }
   };
-  if (!board) return <p>Loading</p>;
+  if (!board) return <p>Loading....</p>;
   return (
     <div className="cards-cont">
       <h2>{board.title}</h2>

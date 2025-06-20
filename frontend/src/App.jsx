@@ -45,10 +45,12 @@ function App() {
   return (
     <>
     <div className="app-div">
-      <button className="toggle-btn" onClick={() => (setTheme(theme === "light" ? "dark" : "light"))}>
+        <Header />
+        <div className="toggle-cont">
+              <button className="toggle-btn" onClick={() => (setTheme(theme === "light" ? "dark" : "light"))}>
         Toggle theme
       </button>
-      <Header />
+        </div>
       <Routes>
         <Route
           path="/"
