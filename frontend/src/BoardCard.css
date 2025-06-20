@@ -2,14 +2,25 @@
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+.board-card:hover{
+   transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.1);
 }
 .board-card button {
-  background-color: var(--bg-color);
-  color: var( --text-color);
+  background-color: var(--btn-bg);
+  color: var( --btn-color);
   padding: 10px 20px;
   border: 2px solid white;
-  margin-left: 10px;
   cursor: pointer;
   font-size: 0.9rem;
-  border-radius: 20px;
+  /* border-radius: 20px; */
+  margin-top: 10px;
+ width: fit-content;
+  
 }

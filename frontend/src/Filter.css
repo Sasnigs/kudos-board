@@ -6,8 +6,8 @@
 }
 
 .category button{
-  background-color: black;
-  color: #fff;
+  background-color: var( --btn-bg);
+  color: var(--btn-color);
   padding: 10px 20px;
   border: 2px solid white;
   margin-left: 10px;

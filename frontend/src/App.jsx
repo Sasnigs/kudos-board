@@ -5,6 +5,7 @@ import BoardDetail from "./BoardDetail";
 import Homepage from "./Homepage";
 import Footer from "./footer";
 import { BASE_URL } from "./data/apiUrl";
+import { Link } from "react-router-dom";
 
 const Categories = {
   DEFAULT: "all",
@@ -46,7 +47,10 @@ function App() {
       <button onClick={() => (setTheme(theme === "light" ? "dark" : "light"))}>
         Toggle theme
       </button>
-      <h1>Kudos Boards</h1>
+      <Link to={"/"} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <h1>Kudos Boards</h1>
+      </Link>
+    
       <Routes>
         <Route
           path="/"

@@ -18,6 +18,7 @@ export default function CardModal({ changeModal, boardId, setBoard }) {
       const res = await fetch(url);
       const data = await res.json();
       setGifResult(data.data);
+      
     } catch (err) {
       console.error("Error fetching GIFS:", err);
     }
@@ -38,13 +39,14 @@ export default function CardModal({ changeModal, boardId, setBoard }) {
       .then((data) =>
         setBoard((prev) => ({ ...prev, cards: [...prev.cards, data] }))
       )
+      changeModal()
       .catch((error) => console.error(error));
   };
   return (
     <div className={`modal-overlay show`}>
       <div className="modal-content">
         <h2>Create New Card</h2>
-        <form onSubmit={(e) => handleSubmit(e)}>
+        <form onSubmit={(e) => handleSubmit(e) }>
           <input
             type="text"
             value={title}

@@ -2,6 +2,7 @@ import { data, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import NewCard from "./NewCard";
 import { BASE_URL } from "./data/apiUrl";
+import "./Cards.css"
 
 export default function BoardDetail() {
   const { id } = useParams();
@@ -60,9 +61,9 @@ export default function BoardDetail() {
     <div>
       <h2>{board.title}</h2>
       <NewCard boardId={id} setBoard={setBoard} />
-      <div>
+      <div className="cards-container"> 
         {board.cards.map((card) => (
-          <div key={card.id}>
+          <div className="card" key={card.id}>
             <p>{card.title}</p>
             <p>{card.message}</p>
             <img src={card.gif} alt="card gif" />
